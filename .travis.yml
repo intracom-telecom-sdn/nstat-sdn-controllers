@@ -1,0 +1,24 @@
+branches:
+  only:
+    - master
+sudo: required
+dist: trusty
+language: python
+python:
+  - 3.4
+jdk:
+  - openjdk7
+before_script:
+  - sudo apt-get update -qq
+  - sudo bash ./deploy/provision.sh
+  - echo "jenkins ALL=(ALL) NOPASSWD:ALL" | sudo tee -a /etc/sudoers
+  - source /opt/venv_nstat/bin/activate
+  - export PYTHONPATH=$(pwd)
+script:
+  - echo "Running Unittests"
+
+after_success:
+  coveralls
+  deactivate
+notifications:
+  email: false
