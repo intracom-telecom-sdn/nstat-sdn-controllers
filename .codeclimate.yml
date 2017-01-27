@@ -1,17 +1,14 @@
-languages:
-  Ruby: true
-  JavaScript: false
-  Python: true
-  PHP: false
+---
 engines:
+ fixme:
+  enabled: true
  radon:
   enabled: true
  shellcheck:
-   enabled: true
- markdownlint:
    enabled: true
 ratings:
   paths:
     - "**.py"
     - "**.sh"
-    - "**.md"
+exclude_paths:
+- images/
