@@ -32,11 +32,13 @@ Next, we describe this common API logic for the controller handlers.
     - prereqs: should be executable
     - input arguments: none
     - exit status:  `0` in case of success, `1` otherwise
+    - usage example:
 1. **change_stats_period.py**:
     - expected behaviour: changes controller statistics interval
     - prereqs: should be executable
     - input arguments: statistic period (in ms)
     - exit status: not checked
+    - usage example:
 1. **change_stats_period.py**:
     - expected behaviour: configures OpenDaylight controller for flow
     modifications. It currently changes controller configuration files in order to
@@ -49,49 +51,62 @@ Next, we describe this common API logic for the controller handlers.
     - prereqs: should be executable
     - input arguments: no input arguments required
     - exit status: not checked
+    - usage example:
 1. **get_controller.sh**:
     - expected behaviour: gets the pre-built version of the OpenDaylight controller.
     - prereqs: should be executable
     - input arguments: none
     - exit status: `0` in case of success, `non-zero` otherwise
+    - usage example:
 1. **get_flows.py**:
-    - expected behaviour:
-    - prereqs:
-    - input arguments:
+    - expected behaviour: returns the number of installed flows of a topology,
+    connected to the controller. This information is extracted from the
+    controller's operational datastore, using RESTCONF.
+    - prereqs: should be executable
+    - input arguments: controller IP address in <str> form, controller restconf
+    port number in <int> form, username for restconf authorization in <str> form
+    password for restconf authorization in <str> form
     - exit status:
+    - usage example:
 1. **get_hosts.py**:
     - expected behaviour:
     - prereqs:
     - input arguments:
     - exit status:
+    - usage example:
 1. **get_links.py**:
     - expected behaviour:
     - prereqs:
     - input arguments:
     - exit status:
+    - usage example:
 1. **get_switches.py**:
     - expected behaviour:
     - prereqs:
     - input arguments:
     - exit status:
+    - usage example:
 1. **start.sh**:
     - expected behaviour: starts the controller so that a switch can connect to
       it
     - prereqs: should be executable
     - input arguments: none
     - exit status: `0` in case of success, `non-zero` otherwise
+    - usage example:
 1. **status.sh**:
     - expected behaviour: queries the controller status
     - prereqs: should be executable
     - input arguments: none
     - output: `1` if controller is running, `0` otherwise
     - exit status: not checked
+    - usage example:
 1. **stop.sh**:
     - expected behaviour: stops the controller so that no switch can connect to
       it
     - prereqs: should be executable
     - input arguments: none
     - exit status: `0` in case of success, `non-zero` otherwise
+    - usage example:
 
 Controller handlers can be directly executed on your local machine provided
 that necessary tools/libraries prerequisite within the ```*.sh```, ```*.py```
