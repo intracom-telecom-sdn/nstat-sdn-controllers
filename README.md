@@ -7,7 +7,7 @@
 
 # NSTAT SDN Controllers
 
-Software Defined Network Controllers Handlers are provided for the following SDN controllers
+We support currently controller handlers for the following versions of OpenDaylight
 
 *  [OpenDaylight Boron SR2](https://nexus.opendaylight.org/content/groups/public/org/opendaylight/integration/distribution-karaf/0.5.2-Boron-SR2/distribution-karaf-0.5.2-Boron-SR2.zip) controller
 *  [OpenDaylight Boron](https://nexus.opendaylight.org/content/groups/public/org/opendaylight/integration/distribution-karaf/0.5.0-Boron/distribution-karaf-0.5.0-Boron.zip) controller
@@ -18,7 +18,57 @@ Software Defined Network Controllers Handlers are provided for the following SDN
 *  [OpenDaylight Lithium SR1](https://nexus.opendaylight.org/content/groups/public/org/opendaylight/integration/distribution-karaf/0.3.1-Lithium-SR1/distribution-karaf-0.3.1-Lithium-SR1.zip) controller
 *  [OpenDaylight Helium SR3](https://nexus.opendaylight.org/content/groups/public/org/opendaylight/integration/distribution-karaf/0.2.3-Helium-SR3/distribution-karaf-0.2.3-Helium-SR3.zip) controller
 
-## Controller handling logic
+However in the
+
+## Controller node deployment
+
+For testing the aforementioned handlers, a container based testing environment
+can either be downloaded directly from dockerhub or built from the tools
+available at the ```/deploy``` folder
+
+- essential tool: [docker](https://docs.docker.com/engine/installation/) (v.1.12.1 or later)
+should be installed on your host machine
+- Give non-root access to docker daemon
+    * Add the docker group if it doesn't already exist sudo groupadd docker
+    * Add the connected user "${USER}" to the docker group. Change the user name to
+match your preferred user
+    ```bash
+    sudo gpasswd -a ${USER} docker
+    ```
+    * Restart the Docker daemon:
+    ```bash
+    sudo service docker restart
+    ```
+
+### Download the pre-built enviroment
+
+```bash
+docker pull intracom/nstat-sdn-controllers
+```
+For running a container once the ```intracom/nstat-sdn-controllers``` is locally
+available
+
+```
+docker run -it intracom/nstat-sdn-controllers /bin/bash
+```
+
+password: root123
+
+then make a git clone of the nstat-sdn-controllers repository within the container
+
+```
+git clone -b master https://github.com/intracom-telecom-sdn/nstat-sdn-controllers.git
+```
+
+and start testing all available controller handlers under ```/controllers``` directory
+
+
+### Build your own container based testing environment
+
+
+## Controller handlers usage
+
+## Controller handling features
 
 Currently the supported controller is OpenDaylight. There is a common API in
 the controller handling logic, followed by all versions of this controller.
@@ -114,50 +164,7 @@ handler files are properly installed. However. for keeping your local machine
 clean, a container based testing environment is provided or can be built as
 desrcibed below.
 
-## Controller node deployment
 
-For testing the aforementioned handlers, a container based testing environment
-can either be downloaded directly from dockerhub or built from the tools
-available at the ```/deploy``` folder
-
-- essential tool: [docker](https://docs.docker.com/engine/installation/) (v.1.12.1 or later)
-should be installed on your host machine
-- Give non-root access to docker daemon
-    * Add the docker group if it doesn't already exist sudo groupadd docker
-    * Add the connected user "${USER}" to the docker group. Change the user name to
-match your preferred user
-    ```bash
-    sudo gpasswd -a ${USER} docker
-    ```
-    * Restart the Docker daemon:
-    ```bash
-    sudo service docker restart
-    ```
-
-### Download the pre-built enviroment
-
-```bash
-docker pull intracom/nstat-sdn-controllers
-```
-For running a container once the ```intracom/nstat-sdn-controllers``` is locally
-available
-
-```
-docker run -it intracom/nstat-sdn-controllers /bin/bash
-```
-
-password: root123
-
-then make a git clone of the nstat-sdn-controllers repository within the container
-
-```
-git clone -b master https://github.com/intracom-telecom-sdn/nstat-sdn-controllers.git
-```
-
-and start testing all available controller handlers under ```/controllers``` directory
-
-
-### Build your own container based testing environment
 
 
 ## Controller handling usage
