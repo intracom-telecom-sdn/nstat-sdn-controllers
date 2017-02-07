@@ -24,7 +24,14 @@ Currently the supported controller is OpenDaylight. There is a common API in
 the controller handling logic, followed by all versions of this controller.
 Next, we describe this common API logic for the controller handlers.
 
-1. **Change persistence**:
+1. **```change_persistence.py```**:
+    - expected behaviour: handler disabling the persistence mode in the configuration
+    of the controller. Changes the persistence attribute to false which is
+    present at the ```org.opendaylight.controller.cluster.datastore.cfg``` of
+    OpenDaylight. In this case the controller will not backup datastore on the disk
+    - prereqs: should be executable
+    - input arguments: none
+    - exit status:  `0` in case of success, `1` otherwise
 1. **Statistics handler**:
     - expected behaviour: changes controller statistics interval
     - prereqs: should be executable
@@ -82,8 +89,9 @@ desrcibed below.
 
 ## Controller node deployment
 
-A container based testing environment can either be downloaded directly from
-dockerhub or built from the tools available at the ```/deploy``` folder
+For testing the aforementioned handlers, a container based testing environment
+can either be downloaded directly from dockerhub or built from the tools
+available at the ```/deploy``` folder
 
 - essential tool: [docker](https://docs.docker.com/engine/installation/) (v.1.12.1 or later)
 should be installed on your host machine
@@ -104,6 +112,23 @@ match your preferred user
 ```bash
 docker pull intracom/nstat-sdn-controllers
 ```
+For running a container once the ```intracom/nstat-sdn-controllers``` is locally
+available
+
+```
+docker run -it intracom/nstat-sdn-controllers /bin/bash
+```
+
+password: root123
+
+then make a git clone of the nstat-sdn-controllers repository within the container
+
+```
+git clone -b master https://github.com/intracom-telecom-sdn/nstat-sdn-controllers.git
+```
+
+and start testing all available controller handlers under ```/controllers``` directory
+
 
 ### Build your own container based testing environment
 
@@ -111,6 +136,9 @@ docker pull intracom/nstat-sdn-controllers
 
 
 ## Controller handling usage
+
+
+## Adding your own handlers
 
 
 
