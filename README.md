@@ -32,13 +32,14 @@ Next, we describe this common API logic for the controller handlers.
     - prereqs: should be executable
     - input arguments: none
     - exit status:  `0` in case of success, `1` otherwise
-1. **Statistics handler**:
+1. **change_stats_period.py**:
     - expected behaviour: changes controller statistics interval
     - prereqs: should be executable
-    - input arguments: statistic period (in milliseconds)
+    - input arguments: statistic period (in ms)
     - exit status: not checked
-1. **Configure controller for flow modifications handler**:
-    - expected behaviour: changes controller configuration files in order to
+1. **change_stats_period.py**:
+    - expected behaviour: configures OpenDaylight controller for flow
+    modifications. It currently changes controller configuration files in order to
     achieve mac-to-mac flow installation for Packet_INs with ARP payload.
       - `<controller base dir>/etc/opendaylight/karaf/54-arphandler.xml`:
       changes the value of key `is-proactive-flood-mode` from `true` to `false`.
@@ -48,35 +49,46 @@ Next, we describe this common API logic for the controller handlers.
     - prereqs: should be executable
     - input arguments: no input arguments required
     - exit status: not checked
-1. **Get controller handler**:
-    - expected behaviour: builds the controller
+1. **get_controller.sh**:
+    - expected behaviour: gets the pre-built version of the OpenDaylight controller.
     - prereqs: should be executable
     - input arguments: none
     - exit status: `0` in case of success, `non-zero` otherwise
-1. **Get flows handler**:
-1. **Get hosts handler**:
-1. **Get links handler**:
-1. **Get switches handler**:
-1. **Start handler**:
+1. **get_flows.py**:
+    - expected behaviour:
+    - prereqs:
+    - input arguments:
+    - exit status:
+1. **get_hosts.py**:
+    - expected behaviour:
+    - prereqs:
+    - input arguments:
+    - exit status:
+1. **get_links.py**:
+    - expected behaviour:
+    - prereqs:
+    - input arguments:
+    - exit status:
+1. **get_switches.py**:
+    - expected behaviour:
+    - prereqs:
+    - input arguments:
+    - exit status:
+1. **start.sh**:
     - expected behaviour: starts the controller so that a switch can connect to
       it
     - prereqs: should be executable
     - input arguments: none
     - exit status: `0` in case of success, `non-zero` otherwise
-1. **Stop handler**:
-    - expected behaviour: stops the controller so that no switch can connect to
-      it
-    - prereqs: should be executable
-    - input arguments: none
-    - exit status: `0` in case of success, `non-zero` otherwise
-1. **Status handler**:
+1. **status.sh**:
     - expected behaviour: queries the controller status
     - prereqs: should be executable
     - input arguments: none
     - output: `1` if controller is running, `0` otherwise
     - exit status: not checked
-1. **Stop handler**:
-    - expected behaviour: cleans-up any files produced during build
+1. **stop.sh**:
+    - expected behaviour: stops the controller so that no switch can connect to
+      it
     - prereqs: should be executable
     - input arguments: none
     - exit status: `0` in case of success, `non-zero` otherwise
@@ -131,8 +143,6 @@ and start testing all available controller handlers under ```/controllers``` dir
 
 
 ### Build your own container based testing environment
-
-
 
 
 ## Controller handling usage
