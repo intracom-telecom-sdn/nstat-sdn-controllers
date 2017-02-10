@@ -1,5 +1,3 @@
-#! /usr/bin/env python3.4
-
 """
 This handler changes a xml parameter file and creates a new one according to \
     input string which is going to be updated and a new value string
@@ -33,7 +31,6 @@ def manipulate_xml(input_filename, output_filename,
 
     if os.path.isfile(input_filename):
         doc = etree.parse(input_filename)
-        #go inside snapshot
         for  elt in doc.getiterator():
             if string_to_find in elt.tag:
                 elt.text = target_value

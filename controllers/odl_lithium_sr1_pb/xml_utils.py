@@ -31,11 +31,10 @@ def manipulate_xml(input_filename, output_filename,
 
     if os.path.isfile(input_filename):
         doc = etree.parse(input_filename)
-        for  elt in doc.getiterator():
-            if string_to_find in elt.tag:
+        for elt in doc.getiterator():
+            if str(elt.tag).find(string_to_find) != -1:
                 elt.text = target_value
         outFile = open(output_filename, 'wb')
         doc.write(outFile)
     else:
         sys.exit(1)
-
