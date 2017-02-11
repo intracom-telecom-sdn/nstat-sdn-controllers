@@ -4,6 +4,8 @@
 [![Docker Automated build](https://img.shields.io/docker/automated/jrottenberg/ffmpeg.svg?maxAge=2592000)](https://hub.docker.com/r/intracom/nstat-sdn-controllers/)
 [![Issue Count](https://codeclimate.com/github/intracom-telecom-sdn/nstat-sdn-controllers/badges/issue_count.svg)](https://codeclimate.com/github/intracom-telecom-sdn/nstat-sdn-controllers)
 [![Code Health](https://landscape.io/github/intracom-telecom-sdn/nstat-sdn-controllers/master/landscape.svg?style=flat)](https://landscape.io/github/intracom-telecom-sdn/nstat-sdn-controllers/master)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/5cf80fa926c046b4bdeaef817ff51756)](https://www.codacy.com/app/kostis-g-papadopoulos/nstat-sdn-controllers?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=intracom-telecom-sdn/nstat-sdn-controllers&amp;utm_campaign=Badge_Grade)
+
 
 # NSTAT SDN Controllers
 

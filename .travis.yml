@@ -11,7 +11,8 @@ jdk:
 before_script:
   - sudo apt-get update -qq
   - sudo bash ./deploy/provision.sh
-
+script:
+  - echo "Unittests not yet implemented"
 after_success:
 notifications:
   email: false

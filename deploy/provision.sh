@@ -78,11 +78,6 @@ pip3 $pip_options install -r $BASE_DIR/requirements.txt
 rm -rf $BASE_DIR/requirements.txt
 deactivate
 
-# NSTAT installation
-#------------------------------------------------------------------------------
-git clone https://github.com/intracom-telecom-sdn/nstat.git $BASE_DIR/nstat
-git --git-dir=$BASE_DIR/nstat/.git --work-tree=$BASE_DIR/nstat checkout v1.3
-apt-get clean
 
 # This step is required to run jobs with any user
 #------------------------------------------------------------------------------

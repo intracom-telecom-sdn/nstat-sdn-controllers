@@ -1,38 +1,30 @@
 #! /usr/bin/env python3.4
 
-"""Handler changing the rate of statistics collection from the topology
-switches
+"""
+Handler changing the rate of statistics collection from the topology switches
 """
 
-import json
-import requests
+import xml_utils
 import sys
+import os
 
-
-CONTROLLER_DIR_NAME = 'distribution-karaf-0.5.0-Boron'
+CONTROLLER_DIR_NAME = 'distribution-karaf-0.5.2-Boron-SR2'
 
 
 def change_stats_period():
     """
-    Takes as command line argument the string as a command line argument
-    <controller_ip>:<controller_sb_port>:<controller_auth_username>:<controller_auth_pass>
-    and disables statistic collection from controller.
+    Takes as command line argument the new interval of statistics period we \
+        want to set in the configuration file of the controller and writes it \
+        in this file.
     """
-    conn_attributes = str(sys.argv[1]).split(':')
-    url = ('http://{0}:{1}/restconf/operations/statistics-manager-control:'
-           'change-statistics-work-mode'.format(conn_attributes[0],
-                                                conn_attributes[1]))
-    auth = (conn_attributes[2], conn_attributes[3])
-    headers = {'content-type': 'application/json'}
-    if conn_attributes[4] == 'enable':
-        data = {'input': {'mode': 'COLLECT_ALL'}}
-    else:
-        data = {'input': {'mode': 'FULLY_DISABLED'}}
-    r = requests.post(url, data=json.dumps(data), headers=headers, auth=auth)
-    if r.status_code == 200:
-        sys.exit(0)
-    else:
-        sys.exit(r.status_code)
+
+    string_to_find = 'min-request-net-monitor-interval'
+    input_file = os.path.sep.join([os.path.dirname(os.path.realpath(__file__)),
+                                   CONTROLLER_DIR_NAME, 'etc', 'opendaylight',
+                                   'karaf', '30-statistics-manager.xml'])
+    xml_utils.manipulate_xml(input_file, input_file, string_to_find,
+                             str(int(sys.argv[1])))
+
 
 if __name__ == '__main__':
     change_stats_period()
