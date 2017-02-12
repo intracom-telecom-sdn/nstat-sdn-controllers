@@ -7,9 +7,12 @@
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/5cf80fa926c046b4bdeaef817ff51756)](https://www.codacy.com/app/kostis-g-papadopoulos/nstat-sdn-controllers?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=intracom-telecom-sdn/nstat-sdn-controllers&amp;utm_campaign=Badge_Grade)
 
 
-# NSTAT SDN Controllers
+# NSTAT SDN Controller Handlers
 
-We support currently controller handlers for the following versions of OpenDaylight
+NSTAT SDN controller handlers are autonomous scripts which perform certain
+[operations](https://github.com/intracom-telecom-sdn/nstat-sdn-controllers/tree/release#controller-handling-features)
+required by NSTAT. We currently support controller handlers for the following
+versions of OpenDaylight
 
 *  [OpenDaylight Boron SR2](https://nexus.opendaylight.org/content/groups/public/org/opendaylight/integration/distribution-karaf/0.5.2-Boron-SR2/distribution-karaf-0.5.2-Boron-SR2.zip) controller
 *  [OpenDaylight Boron](https://nexus.opendaylight.org/content/groups/public/org/opendaylight/integration/distribution-karaf/0.5.0-Boron/distribution-karaf-0.5.0-Boron.zip) controller
@@ -20,16 +23,24 @@ We support currently controller handlers for the following versions of OpenDayli
 *  [OpenDaylight Lithium SR1](https://nexus.opendaylight.org/content/groups/public/org/opendaylight/integration/distribution-karaf/0.3.1-Lithium-SR1/distribution-karaf-0.3.1-Lithium-SR1.zip) controller
 *  [OpenDaylight Helium SR3](https://nexus.opendaylight.org/content/groups/public/org/opendaylight/integration/distribution-karaf/0.2.3-Helium-SR3/distribution-karaf-0.2.3-Helium-SR3.zip) controller
 
-However in the
+However, similar handlers for other SDN controllers are about to be introduced
+in future releases of this repository.
 
 ## Controller node deployment
 
-For testing the aforementioned handlers, a container based testing environment
-can either be downloaded directly from dockerhub or built from the tools
-available at the ```/deploy``` folder
+Controller handlers are written in ``bash/python`` and therefore further required
+packages are necessary before running. In order the user keeps the host os clean
+ a container based testing environment is provided which can either be downloaded
+directly from [dockerhub](https://hub.docker.com/r/intracom/nstat-sdn-controllers/)
+or built from the tools available at the ```/deploy``` folder.
+
+In both cases the [docker](https://www.docker.com/) platform must be installed
+on the host side.
 
 - essential tool: [docker](https://docs.docker.com/engine/installation/) (v.1.12.1 or later)
-should be installed on your host machine
+
+and the actions below have to be followed
+
 - Give non-root access to docker daemon
     * Add the docker group if it doesn't already exist sudo groupadd docker
     * Add the connected user "${USER}" to the docker group. Change the user name to
@@ -47,8 +58,15 @@ match your preferred user
 ```bash
 docker pull intracom/nstat-sdn-controllers
 ```
-For running a container once the ```intracom/nstat-sdn-controllers``` is locally
-available
+Once the image pull operation is complete, check locally the existence of the
+image
+
+```bash
+docker ps -a
+```
+should list the ``intracom/nstat-sdn-controllers`` image.  For running a
+container once the ```intracom/nstat-sdn-controllers``` image is
+locally available
 
 ```
 docker run -it intracom/nstat-sdn-controllers /bin/bash
@@ -56,13 +74,14 @@ docker run -it intracom/nstat-sdn-controllers /bin/bash
 
 password: root123
 
-then make a git clone of the nstat-sdn-controllers repository within the container
+Make a git clone of the nstat-sdn-controllers repository within the container
 
 ```
-git clone -b master https://github.com/intracom-telecom-sdn/nstat-sdn-controllers.git
+git clone -b v.1.0 https://github.com/intracom-telecom-sdn/nstat-sdn-controllers.git
 ```
 
-and start testing all available controller handlers under ```/controllers``` directory
+and start testing all available controller handlers which are present under
+```/controllers``` directory
 
 
 ### Build your own container based testing environment
@@ -165,8 +184,6 @@ that necessary tools/libraries prerequisite within the ```*.sh```, ```*.py```
 handler files are properly installed. However. for keeping your local machine
 clean, a container based testing environment is provided or can be built as
 desrcibed below.
-
-
 
 
 ## Controller handling usage
