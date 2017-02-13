@@ -177,7 +177,7 @@ Next, we describe this common API logic for the controller handlers.
     port number in <int> form, username for restconf authorization in <str> form
     password for restconf authorization in <str> form
     - exit status: not checked
-    - usage example: ``python3.4 get_flows.py '127.0.0.1' '8181' 'admin' 'admin' ``
+    - usage example: ``python3.4 get_flows.py '127.0.0.1' 8181 'admin' 'admin' ``
 1. **``get_hosts.py``**:
     - expected behaviour: returns the number of hosts of a topology,
     connected to the controller. This information is extracted from the
@@ -188,7 +188,7 @@ Next, we describe this common API logic for the controller handlers.
     port number in <int> form, username for restconf authorization in <str> form
     password for restconf authorization in <str> form
     - exit status: not checked
-    - usage example: ``python3.4 get_flows.py '127.0.0.1' '8181' 'admin' 'admin' ``
+    - usage example: ``python3.4 get_flows.py '127.0.0.1' 8181 'admin' 'admin' ``
 1. **``get_links.py``**:
     - expected behaviour: returns the number of links of a topology,
     connected to the controller. This information is extracted from the
@@ -199,7 +199,7 @@ Next, we describe this common API logic for the controller handlers.
     port number in <int> form, username for restconf authorization in <str> form
     password for restconf authorization in <str> form
     - exit status: not checked
-    - usage example: ``python3.4 get_flows.py '127.0.0.1' '8181' 'admin' 'admin' ``
+    - usage example: ``python3.4 get_flows.py '127.0.0.1' 8181 'admin' 'admin' ``
 1. **``get_switches.py``**:
     - expected behaviour: returns the number of switches of a topology,
     connected to the controller. This information is extracted from the
@@ -210,7 +210,7 @@ Next, we describe this common API logic for the controller handlers.
     port number in <int> form, username for restconf authorization in <str> form
     password for restconf authorization in <str> form
     - exit status:
-    - usage example: ``python3.4 get_flows.py '127.0.0.1' '8181' 'admin' 'admin' ``
+    - usage example: ``python3.4 get_flows.py '127.0.0.1' 8181 'admin' 'admin' ``
 1. **``start.sh``**:
     - expected behaviour: starts the controller so that a switch can connect to
       it. Run the ``./get_controller.sh`` handler before running this handler.
