@@ -166,7 +166,7 @@ Next, we describe this common API logic for the controller handlers.
     - prereqs: should be executable
     - input arguments: none
     - exit status: `0` in case of success, `non-zero` otherwise
-    - usage example: ./get_controller.sh
+    - usage example: ``./get_controller.sh``
 1. **``get_flows.py``**:
     - expected behaviour: returns the number of installed flows of a topology,
     connected to the controller. This information is extracted from the
@@ -217,7 +217,7 @@ Next, we describe this common API logic for the controller handlers.
     - prereqs: should be executable
     - input arguments: none
     - exit status: `0` in case of success, `non-zero` otherwise
-    - usage example: ./start.sh
+    - usage example: ``./start.sh``
 1. **``status.sh``**:
     - expected behaviour: queries the controller status. Run the ``./get_controller.sh`` handler
       before running this handler.
@@ -225,12 +225,12 @@ Next, we describe this common API logic for the controller handlers.
     - input arguments: none
     - output: `1` if controller is running, `0` otherwise
     - exit status: not checked
-    - usage example: ./status.sh
+    - usage example: ``./status.sh``
 1. **``stop.sh``**:
     - expected behaviour: stops the controller so that no switch can connect to
       it. Run the ``./get_controller.sh`` handler before running this handler.
     - prereqs: should be executable
     - input arguments: none
     - exit status: `0` in case of success, `non-zero` otherwise
-    - usage example: ./stop.sh
+    - usage example: ``./stop.sh``
 
