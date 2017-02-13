@@ -23,8 +23,9 @@ versions of OpenDaylight
 *  [OpenDaylight Lithium SR1](https://nexus.opendaylight.org/content/groups/public/org/opendaylight/integration/distribution-karaf/0.3.1-Lithium-SR1/distribution-karaf-0.3.1-Lithium-SR1.zip) controller
 *  [OpenDaylight Helium SR3](https://nexus.opendaylight.org/content/groups/public/org/opendaylight/integration/distribution-karaf/0.2.3-Helium-SR3/distribution-karaf-0.2.3-Helium-SR3.zip) controller
 
-However, similar handlers for other SDN controllers are about to be introduced
-in future releases of this repository.
+However, similar handlers for other SDN controllers (i.e [ONOS](http://onosproject.org/))
+are about to be introduced in future releases of this repository. Users are strongly
+encouraged to submit their own handlers both for ODL or other SDN controllers.
 
 ## Controller node deployment
 
@@ -37,7 +38,7 @@ desrcibed below.
 The container based testing environment provided, can either be downloaded
 directly from
 [dockerhub](https://hub.docker.com/r/intracom/nstat-sdn-controllers/)
-or built from the tools available within the ```/deploy``` folder.
+or built from the tools available within the ```<PROJECT_DIR>/deploy``` folder.
 
 In both cases, the [docker](https://www.docker.com/) platform must be installed
 on the host side.
@@ -81,14 +82,14 @@ docker run -it intracom/nstat-sdn-controllers /bin/bash
 
 ``password: root123``
 
-Make a git clone of the nstat-sdn-controllers repository within the container
+Once loggin in the container make a
 
 ```
 git clone -b v.1.0 https://github.com/intracom-telecom-sdn/nstat-sdn-controllers.git
 ```
 
 and start testing all available controller handlers which are present under
-```<PROJECT_DIR>/controllers``` directory
+```<PROJECT_DIR>/controllers/``` directory
 
 
 ### Build your own container based testing environment
@@ -105,20 +106,20 @@ git clone -b v.1.0 https://github.com/intracom-telecom-sdn/nstat-sdn-controllers
 
 Navigate to
 
-```<PROJECT_DIR>/deploy/docker/proxy``` directory. Enter the command below to
+```<PROJECT_DIR>/deploy/docker/no_proxy``` directory. Enter the command below to
 start building locally your own image based on the existing ``Dockerfile``.
 
 ```bash
 docker build -t intracom/nstat-sdn-controllers:latest .
 ```
 
-Verify that the image exists locally
+Once the build process is over, verify that the image exists locally
 
 ```bash
 docker images
 ```
 should list ``intracom/nstat-sdn-controllers:latest`` image. Start your own
-containeer as mentioned in the previous section.
+container as mentioned in the previous section.
 
 
 ## Controller handling features
@@ -232,14 +233,4 @@ Next, we describe this common API logic for the controller handlers.
     - input arguments: none
     - exit status: `0` in case of success, `non-zero` otherwise
     - usage example: ./stop.sh
-
-## Controller handlers usage
-
-
-## Adding your own handlers
-
-
-
-
-
 
