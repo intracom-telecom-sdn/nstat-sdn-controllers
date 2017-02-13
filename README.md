@@ -173,9 +173,9 @@ Next, we describe this common API logic for the controller handlers.
     controller's operational datastore, using RESTCONF. Run the ``./get_controller.sh``
     handler before running this handler.
     - prereqs: should be executable
-    - input arguments: controller IP address in <str> form, controller restconf
-    port number in <int> form, username for restconf authorization in <str> form
-    password for restconf authorization in <str> form
+    - input arguments: controller IP address in ``str`` form, controller restconf
+    port number in ``int`` form, username for restconf authorization in ``str`` form
+    password for restconf authorization in ``str`` form
     - exit status: not checked
     - usage example: ``python3.4 get_flows.py '127.0.0.1' 8181 'admin' 'admin' ``
 1. **``get_hosts.py``**:
@@ -184,9 +184,9 @@ Next, we describe this common API logic for the controller handlers.
     controller's operational datastore, using RESTCONF. Run the
     ``./get_controller.sh`` handler before running this handler.
     - prereqs:
-    - input arguments: controller IP address in <str> form, controller restconf
-    port number in <int> form, username for restconf authorization in <str> form
-    password for restconf authorization in <str> form
+    - input arguments: controller IP address in ``str`` form, controller restconf
+    port number in ``int`` form, username for restconf authorization in ``str`` form
+    password for restconf authorization in ``str`` form
     - exit status: not checked
     - usage example: ``python3.4 get_flows.py '127.0.0.1' 8181 'admin' 'admin' ``
 1. **``get_links.py``**:
@@ -195,9 +195,9 @@ Next, we describe this common API logic for the controller handlers.
     controller's datastore, using RESTCONF. Run the ``./get_controller.sh``
     handler before running this handler.
     - prereqs:
-    - input arguments: controller IP address in <str> form, controller restconf
-    port number in <int> form, username for restconf authorization in <str> form
-    password for restconf authorization in <str> form
+    - input arguments: controller IP address in ``str`` form, controller restconf
+    port number in ``int`` form, username for restconf authorization in ``str`` form
+    password for restconf authorization in ``str`` form
     - exit status: not checked
     - usage example: ``python3.4 get_flows.py '127.0.0.1' 8181 'admin' 'admin' ``
 1. **``get_switches.py``**:
@@ -206,9 +206,9 @@ Next, we describe this common API logic for the controller handlers.
     controller's datastore, using RESTCONF. Run the ``./get_controller.sh`` handler
       before running this handler.
     - prereqs:
-    - input arguments: controller IP address in <str> form, controller restconf
-    port number in <int> form, username for restconf authorization in <str> form
-    password for restconf authorization in <str> form
+    - input arguments: controller IP address in ``str`` form, controller restconf
+    port number in ``int`` form, username for restconf authorization in ``str`` form
+    password for restconf authorization in ``str`` form
     - exit status:
     - usage example: ``python3.4 get_flows.py '127.0.0.1' 8181 'admin' 'admin' ``
 1. **``start.sh``**:
