@@ -85,7 +85,8 @@ docker run -it intracom/nstat-sdn-controllers /bin/bash
 Once logging in the container make a
 
 ```
-git clone -b v.1.0 https://github.com/intracom-telecom-sdn/nstat-sdn-controllers.git
+git clone https://github.com/intracom-telecom-sdn/nstat-sdn-controllers.git nstat-sdn-controllers
+git --git-dir=nstat-sdn-controllers/.git --work-tree=nstat-sdn-controllers checkout v.1.0
 ```
 
 and start testing all available controller handlers which are present under
@@ -101,7 +102,8 @@ locally the testing enviroment as follows
 Make a git clone of the nstat-sdn-controllers repository within the host machine
 
 ```
-git clone -b v.1.0 https://github.com/intracom-telecom-sdn/nstat-sdn-controllers.git
+git clone https://github.com/intracom-telecom-sdn/nstat-sdn-controllers.git nstat-sdn-controllers
+git --git-dir=nstat-sdn-controllers/.git --work-tree=nstat-sdn-controllers checkout v.1.0
 ```
 
 Navigate to
