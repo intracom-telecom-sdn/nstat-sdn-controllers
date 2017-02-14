@@ -82,7 +82,7 @@ docker run -it intracom/nstat-sdn-controllers /bin/bash
 
 ``password: root123``
 
-Once loggin in the container make a
+Once logging in the container make a
 
 ```
 git clone -b v.1.0 https://github.com/intracom-telecom-sdn/nstat-sdn-controllers.git
