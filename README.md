@@ -5,7 +5,7 @@
 [![Issue Count](https://codeclimate.com/github/intracom-telecom-sdn/nstat-sdn-controllers/badges/issue_count.svg)](https://codeclimate.com/github/intracom-telecom-sdn/nstat-sdn-controllers)
 [![Code Health](https://landscape.io/github/intracom-telecom-sdn/nstat-sdn-controllers/master/landscape.svg?style=flat)](https://landscape.io/github/intracom-telecom-sdn/nstat-sdn-controllers/master)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/5cf80fa926c046b4bdeaef817ff51756)](https://www.codacy.com/app/kostis-g-papadopoulos/nstat-sdn-controllers?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=intracom-telecom-sdn/nstat-sdn-controllers&amp;utm_campaign=Badge_Grade)
-
+[![Code Issues](https://www.quantifiedcode.com/api/v1/project/8bb40c00569a4377bbee1a2d8427c292/badge.svg)](https://www.quantifiedcode.com/app/project/8bb40c00569a4377bbee1a2d8427c292)
 
 # NSTAT SDN Controller Handlers
 
